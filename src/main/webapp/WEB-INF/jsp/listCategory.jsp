@@ -23,4 +23,7 @@
 		<a href="?start=${page.start+2}">下一页</a>
 		<a href="?start=${page.last}">末  页</a>
 	</div>
+	 <div>
+		 <a href="/ssm/addCategory">添加</a>
+	 </div>
  </div>

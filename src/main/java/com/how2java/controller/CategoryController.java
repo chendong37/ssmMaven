@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageHelper;
@@ -36,6 +37,18 @@ public class CategoryController {
 		// 放入jsp路径
 		mav.setViewName("listCategory");
 		return mav;
+	}
+	@RequestMapping("addCategory")
+	public ModelAndView addCateGory(Category category){
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("addCategory");
+		if (category.getId()==0&&category.getName()==null){
+			return mv;
+		}
+		int result = categoryService.add(category);
+		mv.addObject("msg",+result+"条添加成功");
+		return  mv;
 	}
 
 }

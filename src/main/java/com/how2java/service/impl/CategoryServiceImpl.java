@@ -14,10 +14,13 @@ public class CategoryServiceImpl  implements CategoryService{
 	@Autowired
 	CategoryMapper categoryMapper;
 	
-	
 	public List<Category> list(){
 		return categoryMapper.list();
 	}
 
+	@Override
+	public int add(Category category) {
+		return categoryMapper.add(category);
+	}
 
 }

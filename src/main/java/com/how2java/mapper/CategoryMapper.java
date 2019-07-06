@@ -21,5 +21,5 @@ public interface CategoryMapper {
        
       
     public List<Category> list();
-      
+
 }
